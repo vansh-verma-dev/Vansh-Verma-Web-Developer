@@ -71,6 +71,8 @@ body {
 .nav-links li a:hover::after {
   width: 100%;
 }
+ 
+
 
 /*--------HERO-SECTION--------*/
 .Hero-section {

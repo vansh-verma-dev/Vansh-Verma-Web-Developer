@@ -62,3 +62,5 @@ function typeEffect() {
 }
 
 typeEffect();
+
+console.log("vansh verma")
