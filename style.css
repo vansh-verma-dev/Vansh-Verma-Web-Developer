@@ -75,51 +75,227 @@ body {
 
 
 /*--------HERO-SECTION--------*/
-.Hero-section {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  min-height: 60vh;
-  background: #ffffff;
-  border-bottom: 1px solid #ccc;
-  padding: 30px 8%;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: "Poppins", sans-serif;
 }
 
-.title h1 {
-  font-size: 66px;
+body{
+  background:#ffffff;
+  overflow-x:hidden;
+  color:#111827;
 }
 
-.title h1:nth-child(2) {
-  color: #38bdf8;
+.Hero-section{
+  min-height:100vh;
+  width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align: center;
+  padding:80px 8%;
+  background:
+  radial-gradient(circle at top right,#ede9fe 0%,transparent 25%),
+  radial-gradient(circle at bottom left,#dbeafe 0%,transparent 25%),
+  #ffffff;
 }
 
-.title p {
-  font-size: 26px;
-  margin: 15px 0 25px;
-  font-style: italic;
-}
+.hero_text{
+  max-width:750px;
  
-.title a  button{
-  text-decoration: none;
-  padding: 12px 22px;
-  background: #38bdf8;
-  color: #fff;
-  border-radius: 10px;
-  margin-right: 10px;
-  font-weight: bold;
-  transition: 0.3s;
-  border: none;
-  margin-top: 10px;
-}
- .title a button:hover{
-  padding: 13px;
-  cursor: pointer;
- }
-
-.image img {
-  width: 330px;
 }
 
+.msg{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:10px 18px;
+  border:1px solid #e5e7eb;
+  border-radius:50px;
+  background:rgba(255,255,255,0.7);
+  backdrop-filter: blur(10px);
+  font-size:14px;
+  color:#4b5563;
+  margin-bottom:25px;
+  box-shadow:0 5px 20px rgba(0,0,0,0.04);
+}
+
+.msg i{
+  color:#22c55e;
+  font-size:10px;
+  animation:pulse 1.5s infinite;
+}
+
+@keyframes pulse{
+  0%{opacity:1;}
+  50%{opacity:.4;}
+  100%{opacity:1;}
+}
+
+.hero_text h1{
+  font-size:clamp(3rem,8vw,6rem);
+  font-weight:800;
+  line-height:1.1;
+  margin-bottom:15px;
+  color:#111827;
+}
+
+.hero_text h1 span{
+  background:linear-gradient(to right,#7c3aed,#2563eb);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.hero_text h2{
+  font-size:clamp(1.5rem,4vw,3rem);
+  font-weight:700;
+  display:flex;
+  align-items:center;
+  gap:15px;
+  margin-bottom:25px;
+  color:#374151;
+ margin-left: 80px;
+}
+
+/* FLIP ANIMATION */
+
+.flip{
+  height:60px;
+  overflow:hidden;
+  position:relative;
+ 
+}
+
+.flip span{
+  display:block;
+  height:60px;
+  color:#7c3aed;
+  animation:flip 8s infinite;
+  font-weight:700;
+  text-align: left;
+}
+
+@keyframes flip{
+  0%{
+    transform:translateY(0);
+  }
+  20%{
+    transform:translateY(0);
+  }
+
+  25%{
+    transform:translateY(-60px);
+  }
+  45%{
+    transform:translateY(-60px);
+  }
+
+  50%{
+    transform:translateY(-120px);
+  }
+  70%{
+    transform:translateY(-120px);
+  }
+
+  75%{
+    transform:translateY(-180px);
+  }
+  95%{
+    transform:translateY(-180px);
+  }
+
+  100%{
+    transform:translateY(0);
+  }
+}
+
+.hero_text p{
+  font-size:18px;
+  line-height:1.8;
+  color:#6b7280;
+  max-width:650px;
+  margin-bottom:35px;
+}
+
+.Hero-btn-group{
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+  justify-content: center;
+}
+
+.Hero-btn-group button{
+  padding:16px 28px;
+  border:none;
+  border-radius:14px;
+  font-size:16px;
+  font-weight:600;
+  cursor:pointer;
+  transition:0.4s ease;
+}
+
+.hire_btn{
+  background:linear-gradient(to right,#7c3aed,#2563eb);
+  color:white;
+  box-shadow:0 10px 30px rgba(124,58,237,0.25);
+}
+
+.hire_btn:hover{
+  transform:translateY(-5px);
+}
+
+.download_btn{
+  background:white;
+  color:#111827;
+  border:1px solid #e5e7eb !important;
+}
+
+.download_btn:hover{
+  background:#f9fafb;
+  transform:translateY(-5px);
+}
+
+button i{
+  margin-right:10px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+  .Hero-section{
+    padding:120px 6%;
+  }
+
+  .hero_text h2{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:5px;
+  }
+
+  .flip{
+    height:45px;
+  }
+
+  .flip span{
+    height:45px;
+    font-size:28px;
+  }
+
+  .hero_text p{
+    font-size:16px;
+  }
+
+  .Hero-btn-group{
+    width:100%;
+  }
+
+  .Hero-btn-group button{
+    width:100%;
+  }
+}
 /*--------ABOUT-SECTION--------*/
 .about-section {
   display: flex;
@@ -130,7 +306,6 @@ body {
   background: #ffffff;
   border-bottom: 1px solid #ccc;
 }
-
 .about-section img {
   width: 280px;
   border-radius: 20px;
@@ -177,11 +352,13 @@ body {
   text-align: center;
 }
 .skills-grid {
+  height: 50vh;
   margin-top: 30px;
   display: flex;
   gap: 25px;
   flex-wrap: wrap;
   justify-content: center;
+ 
 }
 .skill {
   height: 260px;
